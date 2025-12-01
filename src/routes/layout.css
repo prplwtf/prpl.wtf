@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import '@fontsource/merriweather';
+@import '@fontsource-variable/merriweather';
 
 @theme {
 	--font-display: 'Merriweather Variable', 'sans-serif';
@@ -19,4 +19,8 @@
 
 body {
 	@apply bg-sandrift-100;
+}
+
+@utility h1 {
+	@apply font-display text-3xl font-bold;
 }
