@@ -41,7 +41,7 @@
 				</a>
 				<a href="https://bsky.app/profile/prpl.wtf" target="_blank">
 					<button
-						class="flex px-6 py-2 bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:px-7 items-center justify-center gap-2 transition-all rounded-lg"
+						class="flex px-6 py-2 bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:px-7 items-center justify-center gap-2 transition-all rounded-lg cursor-pointer"
 					>
 						<SiBluesky size={20} />
 						<span>Bluesky</span>
@@ -49,7 +49,7 @@
 				</a>
 				<a href="https://en.pronouns.page/@prplwtf" target="_blank">
 					<button
-						class="flex px-6 py-2 bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:px-7 items-center justify-center gap-2 transition-all rounded-r-3xl rounded-l-lg"
+						class="flex px-6 py-2 bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:px-7 items-center justify-center gap-2 transition-all rounded-r-3xl rounded-l-lg cursor-pointer"
 					>
 						<SiPronounsdotpage size={20} />
 						<span>Pronouns</span>
@@ -64,13 +64,13 @@
 			src="/static/img/polaroids/accordion.png"
 			alt="Polaroid of an accordion locked in a cage, with a 'no accordions allowed' sign in front of it."
 			width="500"
-			class="rotate-10 relative z-0 translate-y-40 -translate-x-48"
+			class="rotate-10 hover:rotate-15 relative z-0 translate-y-40 -translate-x-48 transition-transform"
 		/>
 		<enhanced:img
 			src="/static/img/polaroids/sharks.jpg"
 			alt="Polaroid of a bunch of IKEA shark plusies (blahaj) in a basket at the IKEA store."
 			width="500"
-			class="-rotate-5 relative z-10 -translate-y-40 translate-x-12"
+			class="-rotate-5 hover:-rotate-10 relative z-10 -translate-y-40 translate-x-12 transition-transform"
 		/>
 	</div>
 </div>
