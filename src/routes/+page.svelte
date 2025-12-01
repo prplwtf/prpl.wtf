@@ -1,35 +1,41 @@
-<script>
-	import { HugeiconsIcon } from '@hugeicons/svelte';
-	import { CodeSquareIcon, Mail02Icon, WorkHistoryIcon } from '@hugeicons-pro/core-solid-rounded';
+<script lang="ts">
+	import BadgeRow from '$lib/components/BadgeRow.svelte';
+
+	const badges = [
+		{ src: '/img/88x31/prpl_wtf.gif', alt: 'prpl.wtf' },
+		{ src: '/img/88x31/vvqb_dev.gif', alt: 'vvqb.dev', href: 'https://vvqb.dev' },
+		{ src: '/img/88x31/auri_lol.gif', alt: 'auri.lol', href: 'https://auri.lol' },
+		{ src: '/img/88x31/liv_town.gif', alt: 'liv.town', href: 'https://liv.town' },
+		{ src: '/img/88x31/circulars_dev.gif', alt: 'circulars.dev', href: 'https://circulars.dev' },
+		{ src: '/img/88x31/bad_cash.gif', alt: 'bad.cash', href: 'https://bad.cash' }
+	];
 </script>
 
-<div class="space-y-6">
-	<div class="space-y-2">
-		<h1 class="h1">Emma den Engelsen</h1>
-		<p>
-			I make and break thingies, usually on the internet. I like messing with software, modding 3d
-			printers and writing overcomplicated bash scripts on occasion.
-		</p>
+<div class="flex justify-between items-center">
+	<div class="p-4 md:p-16 lg:p-24 md:max-w-208 md:w-auto w-full">
+		<div class="space-y-4">
+			<div class="space-y-2">
+				<h1 class="h1">Emma den Engelsen</h1>
+				<p>
+					I make and break thingies, usually on the internet. I like messing with software, modding
+					3d printers and writing overcomplicated bash scripts on occasion.
+				</p>
+			</div>
+			<BadgeRow {badges} />
+		</div>
 	</div>
-	<div class="flex h-25 gap-2.5">
-		<button
-			class="w-1/3 flex flex-col bg-sandrift-200 hover:bg-sandrift-300/60 active:bg-sandrift-300 active:w-[38%] items-center justify-center gap-0.5 transition-all rounded-l-3xl rounded-r-lg"
-		>
-			<HugeiconsIcon icon={CodeSquareIcon} size={32} color="currentColor" />
-			<span>Projects</span>
-		</button>
-		<button
-			class="w-1/3 flex flex-col bg-sandrift-200 hover:bg-sandrift-300/60 active:bg-sandrift-300 active:w-[38%] items-center justify-center gap-0.5 transition-all rounded-lg"
-		>
-			<HugeiconsIcon icon={WorkHistoryIcon} size={32} color="currentColor" />
-			<span>Experience</span>
-		</button>
-		<button
-			class="w-1/3 flex flex-col bg-sandrift-200 hover:bg-sandrift-300/60 active:bg-sandrift-300 active:w-[38%] items-center justify-center gap-0.5 transition-all rounded-r-3xl rounded-l-lg"
-		>
-			<HugeiconsIcon icon={Mail02Icon} size={32} color="currentColor" />
-			<span>Contact</span>
-		</button>
+	<div class="p-4 md:p-16 lg:p-24 lg:block hidden">
+		<enhanced:img
+			src="/static/img/polaroids/placeholder_1.webp"
+			alt="Polaroid placeholder 1"
+			width="500"
+			class="-rotate-5"
+		/>
+		<enhanced:img
+			src="/static/img/polaroids/placeholder_2.webp"
+			alt="Polaroid placeholder 2"
+			width="500"
+			class="-rotate-5"
+		/>
 	</div>
-	<div class="flex gap-2"></div>
 </div>

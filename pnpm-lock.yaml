@@ -11,12 +11,9 @@ importers:
       '@fontsource-variable/merriweather':
         specifier: ^5.2.6
         version: 5.2.6
-      '@hugeicons-pro/core-solid-rounded':
-        specifier: ^2.0.0
-        version: 2.0.0
-      '@hugeicons/svelte':
-        specifier: ^1.0.2
-        version: 1.0.2(svelte@5.45.2)
+      '@lucide/svelte':
+        specifier: ^0.555.0
+        version: 0.555.0(svelte@5.45.2)
     devDependencies:
       '@eslint/compat':
         specifier: ^1.4.0
@@ -293,14 +290,6 @@ packages:
   '@fontsource-variable/merriweather@5.2.6':
     resolution: {integrity: sha512-bHCDt99f/M48eUcFA86uh/oSPyn8r/ZxXR9l578wqLvjTwDzXx8A/XOAI05WfJ3LnH1rDufQX5RJwiZtbXUCkw==}
 
-  '@hugeicons-pro/core-solid-rounded@2.0.0':
-    resolution: {integrity: sha512-cFbqGsc+VYvIpi6dMEMPsFRSNPRZ5tQoTyMbs2502wvZgyf0xY1NmorBKd3qev21Dawymno+9XQ2bX5jbyT1WQ==}
-
-  '@hugeicons/svelte@1.0.2':
-    resolution: {integrity: sha512-JBkirOE361SorXQwU8cFNDH+MVIn7OwBDfVrC+C9LAPtK0Yyt0CmjRwdlO4whlmKTtCPZy2dQ2XW46J826s2qg==}
-    peerDependencies:
-      svelte: ^5.0.0
-
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -469,6 +458,11 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
+
+  '@lucide/svelte@0.555.0':
+    resolution: {integrity: sha512-aqTOMjBjf/HNwrhggRdb83T0QslZdpJTyTwr/chtXTGw7u4Hcu4zQb/5uA+csF0KKawKWVnsNI1MdHEHeEXTcQ==}
+    peerDependencies:
+      svelte: ^5
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -1694,12 +1688,6 @@ snapshots:
 
   '@fontsource-variable/merriweather@5.2.6': {}
 
-  '@hugeicons-pro/core-solid-rounded@2.0.0': {}
-
-  '@hugeicons/svelte@1.0.2(svelte@5.45.2)':
-    dependencies:
-      svelte: 5.45.2
-
   '@humanfs/core@0.19.1': {}
 
   '@humanfs/node@0.16.7':
@@ -1825,6 +1813,10 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
+
+  '@lucide/svelte@0.555.0(svelte@5.45.2)':
+    dependencies:
+      svelte: 5.45.2
 
   '@polka/url@1.0.0-next.29': {}
 
