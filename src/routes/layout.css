@@ -4,23 +4,49 @@
 @theme {
 	--font-display: 'Merriweather Variable', 'sans-serif';
 
-	--color-sandrift-50: #f9f6f3;
-	--color-sandrift-100: #f1ebe3;
-	--color-sandrift-200: #e3d6c5;
-	--color-sandrift-300: #d1baa0;
-	--color-sandrift-400: #be9b7b;
-	--color-sandrift-500: #b0825f;
-	--color-sandrift-600: #a27154;
-	--color-sandrift-700: #875c47;
-	--color-sandrift-800: #6e4b3e;
-	--color-sandrift-900: #5a3f34;
-	--color-sandrift-950: #30201a;
+	--color-rosewater: hsl(11deg, 59%, 67%);
+	--color-flamingo: hsl(0deg, 60%, 67%);
+	--color-pink: hsl(316deg, 73%, 69%);
+	--color-mauve: hsl(266deg, 85%, 58%);
+	--color-red: hsl(347deg, 87%, 44%);
+	--color-maroon: hsl(355deg, 76%, 59%);
+	--color-peach: hsl(22deg, 99%, 52%);
+	--color-yellow: hsl(35deg, 77%, 49%);
+	--color-green: hsl(109deg, 58%, 40%);
+	--color-teal: hsl(183deg, 74%, 35%);
+	--color-sky: hsl(197deg, 97%, 46%);
+	--color-sapphire: hsl(189deg, 70%, 42%);
+	--color-blue: hsl(220deg, 91%, 54%);
+	--color-lavender: hsl(231deg, 97%, 72%);
+	--color-text: hsl(234deg, 16%, 35%);
+	--color-subtext-1: hsl(233deg, 13%, 41%);
+	--color-subtext-0: hsl(233deg, 10%, 47%);
+	--color-overlay-2: hsl(232deg, 10%, 53%);
+	--color-overlay-1: hsl(231deg, 10%, 59%);
+	--color-overlay-0: hsl(228deg, 11%, 65%);
+	--color-surface-2: hsl(227deg, 12%, 71%);
+	--color-surface-1: hsl(225deg, 14%, 77%);
+	--color-surface-0: hsl(223deg, 16%, 83%);
+	--color-base: hsl(220deg, 23%, 95%);
+	--color-mantle: hsl(220deg, 22%, 92%);
+	--color-crust: hsl(220deg, 21%, 89%);
 }
 
 body {
-	@apply bg-sandrift-100;
+	@apply bg-crust;
 }
 
 @utility h1 {
 	@apply font-display text-3xl font-bold;
+}
+
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply text-black;
 }

@@ -15,12 +15,12 @@
 			<a
 				href={badge.href}
 				target="_blank"
-				class="group bg-sandrift-200 border-sandrift-300 border inline-block me-1"
+				class="group bg-neutral-200 border-neutral-300 border inline-block me-1"
 			>
 				<img src={badge.src} alt={badge.alt} class="" />
 			</a>
 		{:else}
-			<div class="group bg-sandrift-200 border-sandrift-300 border inline-block me-1">
+			<div class="group bg-neutral-200 border-neutral-300 border inline-block me-1">
 				<img src={badge.src} alt={badge.alt} class="" />
 			</div>
 		{/if}
