@@ -11,17 +11,17 @@
 </svelte:head>
 
 <div
-	class="p-4 py-8 w-full md:p-16 lg:p-24 fixed bg-neutral-100 border-b border-neutral-300 md:border-none md:bg-transparent top-0 left-0 flex items-center gap-4 z-10 h-10"
+	class="p-4 py-8 w-full md:p-16 lg:p-24 fixed bg-crust border-b border-overlay-1 md:border-none md:bg-transparent top-0 left-0 flex items-center gap-6 z-10 h-10"
 >
 	<a href={resolve('/')} title="Home" class="group">
 		<enhanced:img
 			src="/static/img/circles_drawn.png"
 			alt="Emma's logo"
 			width="40"
-			class="-mt-0.5 -rotate-2 group-hover:opacity-75 transition-opacity"
+			class="-mt-0.5 -rotate-2 min-w-10 group-hover:opacity-75 transition-opacity"
 		/>
 	</a>
-	<div class="flex gap-1.5 h-10 w-100">
+	<div class="flex gap-1.5 h-10 w-full md:w-100">
 		<button
 			class="w-1/3 flex bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:w-[38%] items-center justify-center gap-0.5 transition-all rounded-l-3xl rounded-r-lg"
 		>

@@ -38,6 +38,7 @@
 	},
 	"dependencies": {
 		"@fontsource-variable/merriweather": "^5.2.6",
+		"@icons-pack/svelte-simple-icons": "^6.5.0",
 		"@lucide/svelte": "^0.555.0"
 	}
 }

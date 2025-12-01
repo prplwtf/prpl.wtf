@@ -11,6 +11,9 @@ importers:
       '@fontsource-variable/merriweather':
         specifier: ^5.2.6
         version: 5.2.6
+      '@icons-pack/svelte-simple-icons':
+        specifier: ^6.5.0
+        version: 6.5.0(@sveltejs/kit@2.49.0(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.45.2)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.2)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.2)
       '@lucide/svelte':
         specifier: ^0.555.0
         version: 0.555.0(svelte@5.45.2)
@@ -305,6 +308,13 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@icons-pack/svelte-simple-icons@6.5.0':
+    resolution: {integrity: sha512-Xj3PTioiV3TJ1NTKsXY95NFG8FUqw90oeyDZIlslWHs1KkuCheu1HOPrlHb0/IM0b4cldPgx/0TldzxzBlM8Cw==}
+    engines: {node: '>=20', pnpm: '>=9'}
+    peerDependencies:
+      '@sveltejs/kit': ^2.5.0
+      svelte: ^4.2.0 || ^5.0.0
 
   '@img/colour@1.0.0':
     resolution: {integrity: sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw==}
@@ -1698,6 +1708,11 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@icons-pack/svelte-simple-icons@6.5.0(@sveltejs/kit@2.49.0(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.45.2)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.2)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.2)':
+    dependencies:
+      '@sveltejs/kit': 2.49.0(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.45.2)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.45.2)(vite@7.2.6(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2))
+      svelte: 5.45.2
 
   '@img/colour@1.0.0': {}
 
