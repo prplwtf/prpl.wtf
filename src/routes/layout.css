@@ -1,0 +1,22 @@
+@import 'tailwindcss';
+@import '@fontsource/merriweather';
+
+@theme {
+	--font-display: 'Merriweather Variable', 'sans-serif';
+
+	--color-sandrift-50: #f9f6f3;
+	--color-sandrift-100: #f1ebe3;
+	--color-sandrift-200: #e3d6c5;
+	--color-sandrift-300: #d1baa0;
+	--color-sandrift-400: #be9b7b;
+	--color-sandrift-500: #b0825f;
+	--color-sandrift-600: #a27154;
+	--color-sandrift-700: #875c47;
+	--color-sandrift-800: #6e4b3e;
+	--color-sandrift-900: #5a3f34;
+	--color-sandrift-950: #30201a;
+}
+
+body {
+	@apply bg-sandrift-100;
+}
