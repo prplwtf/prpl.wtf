@@ -22,21 +22,24 @@
 		/>
 	</a>
 	<div class="flex gap-1.5 h-10 w-full md:w-100">
-		<button
+		<a
+			href={resolve('/blog')}
 			class="w-1/3 flex bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:w-[38%] items-center justify-center gap-0.5 transition-all rounded-l-3xl rounded-r-lg"
 		>
 			<span>Blog</span>
-		</button>
-		<button
+		</a>
+		<a
+			href={resolve('/projects')}
 			class="w-1/3 flex bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:w-[38%] items-center justify-center gap-0.5 transition-all rounded-lg"
 		>
 			<span>Projects</span>
-		</button>
-		<button
+		</a>
+		<a
+			href={resolve('/contact')}
 			class="w-1/3 flex bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:w-[38%] items-center justify-center gap-0.5 transition-all rounded-r-3xl rounded-l-lg"
 		>
 			<span>Contact</span>
-		</button>
+		</a>
 	</div>
 </div>
 
