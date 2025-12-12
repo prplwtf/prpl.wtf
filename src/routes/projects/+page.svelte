@@ -15,7 +15,7 @@
 		},
 		{
 			name: 'Nebula',
-			description: 'The most popular Pterodactyl theme. Built with Blueprint.',
+			description: 'Most popular and best rated Pterodactyl theme. Built with Blueprint.',
 			img: {
 				src: '/img/projects/nebula.jpeg',
 				alt: 'Screenshot of the Nebula theme'
@@ -24,34 +24,24 @@
 			key: 'nebula'
 		},
 		{
-			name: 'Blueprint',
-			description: 'Lorem ipsum dolor sit amet',
-			img: {
-				src: '/img/circles_drawn.png',
-				alt: 'blueprint woo'
-			},
-			href: 'https://blueprint.zip',
-			key: 'blueprint3'
-		},
-		{
 			name: 'Writea',
-			description: 'Lorem ipsum dolor sit amet',
+			description: 'Markdown blog tool written with HTML, JS and CSS.',
 			img: {
-				src: '/img/circles_drawn.png',
-				alt: 'blueprint woo'
+				src: '/img/projects/writea.jpeg',
+				alt: 'Screenshot of a "writea" blog site'
 			},
-			href: 'https://blueprint.zip',
-			key: 'blueprint4'
+			href: 'https://github.com/prplwtf/writea',
+			key: 'writea'
 		},
 		{
-			name: 'Blueprint',
-			description: 'Lorem ipsum dolor sit amet',
+			name: 'Bashatime',
+			description: 'Somewhat functional wakatime plugin written in bash.',
 			img: {
-				src: '/img/circles_drawn.png',
+				src: '/img/projects/bashatime.jpeg',
 				alt: 'blueprint woo'
 			},
-			href: 'https://blueprint.zip',
-			key: 'blueprint5'
+			href: 'https://github.com/prplwtf/bashatime',
+			key: 'bashatime'
 		}
 	];
 </script>
