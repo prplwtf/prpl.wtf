@@ -46,6 +46,10 @@
 	];
 </script>
 
+<svelte:head>
+	<title>Emma's projects</title>
+</svelte:head>
+
 <div class="flex justify-between items-center">
 	<div class="p-4 md:p-16 lg:p-24 md:max-w-208 md:w-auto w-full space-y-3">
 		<div class="space-y-2">
