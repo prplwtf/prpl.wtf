@@ -23,10 +23,10 @@
 	</a>
 	<div class="flex gap-1.5 h-10 w-full md:w-100">
 		<a
-			href={resolve('/blog')}
+			href={resolve('/')}
 			class="w-1/3 flex bg-overlay-0/60 hover:bg-overlay-1/60 active:bg-overlay-1 active:w-[38%] items-center justify-center gap-0.5 transition-all rounded-l-3xl rounded-r-lg"
 		>
-			<span>Blog</span>
+			<span>Home</span>
 		</a>
 		<a
 			href={resolve('/projects')}
