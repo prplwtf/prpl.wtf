@@ -17,11 +17,11 @@
 				target="_blank"
 				class="group bg-overlay-0 bg-overlay-1 border inline-block me-1"
 			>
-				<img src={badge.src} alt={badge.alt} class="" />
+				<img src={badge.src} alt={badge.alt} style="image-rendering: pixelated" />
 			</a>
 		{:else}
 			<div class="group bg-overlay-0 bg-overlay-1 border inline-block me-1">
-				<img src={badge.src} alt={badge.alt} class="" />
+				<img src={badge.src} alt={badge.alt} style="image-rendering: pixelated" />
 			</div>
 		{/if}
 	{/each}
