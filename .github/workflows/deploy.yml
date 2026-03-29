@@ -27,8 +27,6 @@ jobs:
         run: pnpm install
 
       - name: build
-        env:
-          BASE_PATH: '/'
         run: |
           pnpm run build
 
