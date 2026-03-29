@@ -14,11 +14,10 @@
 	class="p-4 py-8 w-full md:p-16 lg:p-24 fixed bg-crust border-b border-overlay-1 md:border-none md:bg-transparent top-0 left-0 flex items-center gap-6 z-10 h-10"
 >
 	<a href={resolve('/')} title="Home" class="group">
-		<enhanced:img
-			src="/static/img/circles_drawn.png"
+		<img
+			src="/img/circles_drawn_resized.png"
 			alt="Emma's logo"
 			width="40"
-			height="23"
 			class="-mt-0.5 -rotate-2 min-w-10 group-hover:opacity-75 transition-opacity"
 		/>
 	</a>
