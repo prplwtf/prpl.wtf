@@ -66,14 +66,14 @@
 	</div>
 
 	<div class="pe-30 2xl:block hidden overflow-visible">
-		<enhanced:img
-			src="/static/img/polaroids/accordion.png"
+		<img
+			src="/img/polaroids/accordion_resized.avif"
 			alt="Polaroid of an accordion locked in a cage, with a 'no accordions allowed' sign in front of it."
 			width="500"
 			class="rotate-10 hover:rotate-15 relative z-0 translate-y-40 -translate-x-48 transition-transform"
 		/>
-		<enhanced:img
-			src="/static/img/polaroids/sharks.jpg"
+		<img
+			src="/img/polaroids/sharks_resized.avif"
 			alt="Polaroid of a bunch of IKEA shark plusies (blahaj) in a basket at the IKEA store."
 			width="500"
 			class="-rotate-5 hover:-rotate-10 relative z-10 -translate-y-40 translate-x-12 transition-transform"
