@@ -18,6 +18,7 @@
 			src="/static/img/circles_drawn.png"
 			alt="Emma's logo"
 			width="40"
+			height="23"
 			class="-mt-0.5 -rotate-2 min-w-10 group-hover:opacity-75 transition-opacity"
 		/>
 	</a>
