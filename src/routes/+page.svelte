@@ -8,9 +8,10 @@
 		{ src: '/img/88x31/auri_lol.gif', alt: 'auri.lol', href: 'https://auri.lol' },
 		{ src: '/img/88x31/liv_town.gif', alt: 'liv.town', href: 'https://liv.town' },
 		{ src: '/img/88x31/circulars_dev.gif', alt: 'circulars.dev', href: 'https://circulars.dev' },
+		{ src: '/img/88x31/jos_gg.gif', alt: 'jos.gg', href: 'https://jos.gg' },
 		{ src: '/img/88x31/bad_cash.gif', alt: 'bad.cash', href: 'https://bad.cash' },
+		{ src: '/img/88x31/arcaege_dev.png', alt: 'arcaege.dev', href: 'https://arcaege.dev' },
 		{ src: '/img/88x31/noob-dev_fyi.gif', alt: 'noob-dev.fyi', href: 'https://noob-dev.fyi' },
-		{ src: '/img/88x31/arcaege_dev.png', alt: 'arcaege.dev', href: 'https://arcaege.dev' }
 	];
 </script>
 
