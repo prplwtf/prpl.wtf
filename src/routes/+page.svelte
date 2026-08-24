@@ -12,6 +12,7 @@
 		{ src: '/img/88x31/bad_cash.gif', alt: 'bad.cash', href: 'https://bad.cash' },
 		{ src: '/img/88x31/arcaege_dev.png', alt: 'arcaege.dev', href: 'https://arcaege.dev' },
 		{ src: '/img/88x31/noob-dev_fyi.gif', alt: 'noob-dev.fyi', href: 'https://noob-dev.fyi' },
+		{ src: '/img/88x31/senko_dev.gif', alt: 'senko.dev', href: 'https://senko.dev' },
 	];
 </script>
 
