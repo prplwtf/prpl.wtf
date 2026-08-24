@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="space-y-1">
     <h1 class="h2 italic">netba.sh</h1>
     <p>
       hi! i'm <b>emma</b>. i'm 17 years old and i build
