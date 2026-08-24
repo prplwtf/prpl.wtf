@@ -1,0 +1,5 @@
+minimumReleaseAge: 1440
+
+onlyBuiltDependencies:
+  - esbuild@0.27.7
+  - esbuild@0.28.2
