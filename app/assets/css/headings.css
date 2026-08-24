@@ -1,0 +1,96 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+}
+
+h1,
+h2,
+h3 {
+  --font-family: 'Noto Serif';
+}
+
+.h1,
+.h2,
+.h3 {
+  --font-family: 'Noto Serif' !important;
+}
+
+h4,
+h5,
+h6 {
+  --font-family: 'Noto Sans';
+  --font-weight: 600;
+}
+
+.h4,
+.h5,
+.h6 {
+  --font-family: 'Noto Sans' !important;
+  --font-weight: 600 !important;
+}
+
+h1 {
+  --font-weight: 700;
+  --font-size: 40px;
+}
+
+.h1 {
+  --font-weight: 700 !important;
+  --font-size: 40px !important;
+}
+
+h2 {
+  --font-weight: 600;
+  --font-size: 32px;
+}
+
+.h2 {
+  --font-weight: 600 !important;
+  --font-size: 32px !important;
+}
+
+h3 {
+  --font-weight: 500;
+  --font-size: 25px;
+}
+
+.h3 {
+  --font-weight: 500 !important;
+  --font-size: 25px !important;
+}
+
+h4 {
+  --font-size: 20px;
+}
+
+.h4 {
+  --font-size: 20px !important;
+}
+
+h5 {
+  --font-size: 18px;
+}
+
+.h5 {
+  --font-size: 18px !important;
+}
+
+h6 {
+  --font-size: 16px;
+}
+
+.h6 {
+  --font-size: 16px !important;
+}

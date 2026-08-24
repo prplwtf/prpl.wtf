@@ -4,5 +4,5 @@
   "tabWidth": 2,
   "semi": false,
   "singleQuote": true,
-  "tailwindStylesheet": "./app/assets/css/app.css"
+  "tailwindStylesheet": "./app/assets/css/main.css"
 }

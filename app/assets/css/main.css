@@ -1,1 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import './headings.css';
+@import './paragraphs.css';
+
+html {
+  color: var(--color-mist-50);
+  background-color: var(--color-mist-900);
+}
