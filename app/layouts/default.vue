@@ -79,7 +79,7 @@ const POLAROID_SLOT = 180
 
 function getContainerSize(): { W: number; H: number } {
   if (import.meta.client) {
-    const el = document.querySelector<HTMLElement>('[data-polaroid-container]')
+    const el = document.querySelector<HTMLElement>('[data-page-container]')
     if (el) return { W: el.clientWidth, H: el.clientHeight }
   }
   return { W: 0, H: 0 }
