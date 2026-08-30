@@ -1,42 +1,41 @@
 <template>
-  <div class="relative h-dvh w-dvw overflow-hidden">
-    <div
-      v-for="(polaroid, index) in activePolaroids"
-      :key="polaroid.src"
-      class="group absolute hidden cursor-grab select-none active:cursor-grabbing lg:block"
-      :style="polaroidStyles[index]"
-      @mousedown="startDrag($event, index)"
-      @touchstart.prevent="startDragTouch($event, index)"
-    >
-      <NuxtImg
-        :src="`/img/polaroids/${polaroid.src}`"
-        :width="256"
-        :height="261"
-        draggable="false"
-        class="bg-white p-4 pb-14 shadow-xl transition-[scale,box-shadow,rotate] group-active:scale-105 group-active:rotate-5 group-active:shadow-black/30"
-      />
-    </div>
+  <!-- dots wallpaper -->
+  <div
+    class="absolute inset-0 z-0 bg-radial from-white from-[2px] to-transparent to-[3px] bg-size-[25px_25px]"
+  />
+  <div
+    class="absolute inset-0 z-0 bg-radial from-mist-900 from-20% to-mist-900/20"
+  />
+  <div
+    class="absolute inset-0 z-0 bg-linear-to-b from-mist-900 from-50% to-mist-900/60 to-80%"
+  />
 
-    <div
-      class="flex h-dvh items-start justify-start p-8 lg:items-center lg:justify-center"
-    >
-      <div class="container max-h-dvh max-w-135">
-        <div class="text-left lg:text-center">
-          <slot />
-        </div>
-      </div>
-    </div>
+  <div
+    v-for="(polaroid, index) in activePolaroids"
+    :key="polaroid.src"
+    class="group absolute z-10 hidden cursor-grab select-none active:cursor-grabbing lg:block"
+    :style="polaroidStyles[index]"
+    @mousedown="startDrag($event, index)"
+    @touchstart.prevent="startDragTouch($event, index)"
+  >
+    <NuxtImg
+      :src="`/img/polaroids/${polaroid.src}`"
+      :width="256"
+      :height="261"
+      draggable="false"
+      class="bg-white p-4 pb-14 shadow-xl transition-[scale,box-shadow,rotate] group-active:scale-105 group-active:rotate-5 group-active:shadow-black/30"
+    />
   </div>
 
   <div
-    class="absolute top-0 left-0 -z-1 h-full w-full bg-linear-to-b from-mist-900 from-50% to-mist-900/60 to-80%"
-  />
-  <div
-    class="absolute top-0 left-0 -z-2 h-full w-full bg-radial from-mist-900 from-20% to-mist-900/20"
-  />
-  <div
-    class="absolute top-0 left-0 -z-3 h-full w-full bg-radial from-white from-[2px] to-transparent to-[3px] bg-size-[25px_25px]"
-  />
+    class="relative flex h-full items-start justify-start p-8 lg:items-center lg:justify-center"
+  >
+    <div class="container max-h-full max-w-135 overflow-y-auto">
+      <div class="text-left lg:text-center">
+        <slot />
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -78,6 +77,14 @@ const CARD_H = 300
 const EDGE_INSET = 80
 const POLAROID_SLOT = 180
 
+function getContainerSize(): { W: number; H: number } {
+  if (import.meta.client) {
+    const el = document.querySelector<HTMLElement>('[data-polaroid-container]')
+    if (el) return { W: el.clientWidth, H: el.clientHeight }
+  }
+  return { W: 0, H: 0 }
+}
+
 function calcTotalLen(W: number, H: number): number {
   const lenTop = W - EDGE_INSET - EDGE_INSET
   const lenRight = H - EDGE_INSET - EDGE_INSET
@@ -99,8 +106,6 @@ function shuffle<T>(arr: T[]): T[] {
 
 const shuffledCatalogue = shuffle(ALL_POLAROIDS)
 
-const totalLen = ref(0)
-
 const activePolaroids = ref<typeof ALL_POLAROIDS>(
   shuffledCatalogue.slice(0, calcCount(calcTotalLen(0, 0)))
 )
@@ -116,18 +121,17 @@ function bringToFront(index: number) {
 }
 
 function perimeterPositions(n: number): Array<{ x: number; y: number }> {
-  const W = window.innerWidth
-  const H = window.innerHeight
+  const { W, H } = getContainerSize()
 
   const top = EDGE_INSET
   const right = W - EDGE_INSET
   const bottom = H - EDGE_INSET
   const left = EDGE_INSET
 
-  const lenTop = right - left // left to right along top
-  const lenRight = bottom - top // top to bottom along right
-  const lenBottom = right - left // right to left along bottom
-  const lenLeft = bottom - top // bottom to top along left
+  const lenTop = right - left
+  const lenRight = bottom - top
+  const lenBottom = right - left
+  const lenLeft = bottom - top
   const totalLen = lenTop + lenRight + lenBottom + lenLeft
 
   const spacing = totalLen / n
@@ -141,24 +145,19 @@ function perimeterPositions(n: number): Array<{ x: number; y: number }> {
     let cy: number
 
     if (d < lenTop) {
-      // top edge: left to right
       cx = left + d
       cy = top
     } else if (d < lenTop + lenRight) {
-      // right edge: top to bottom
       cx = right
       cy = top + (d - lenTop)
     } else if (d < lenTop + lenRight + lenBottom) {
-      // bottom edge: right to left
       cx = right - (d - lenTop - lenRight)
       cy = bottom
     } else {
-      // left edge: bottom to top
       cx = left
       cy = bottom - (d - lenTop - lenRight - lenBottom)
     }
 
-    // convert centre to top-left corner
     results.push({ x: cx - CARD_W / 2, y: cy - CARD_H / 2 })
   }
 
@@ -195,8 +194,8 @@ onUnmounted(() => {
 })
 
 function applyViewport() {
-  totalLen.value = calcTotalLen(window.innerWidth, window.innerHeight)
-  const count = calcCount(totalLen.value)
+  const { W, H } = getContainerSize()
+  const count = calcCount(calcTotalLen(W, H))
 
   if (count !== activePolaroids.value.length) {
     activePolaroids.value = shuffledCatalogue.slice(0, count)

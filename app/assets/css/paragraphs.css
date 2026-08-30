@@ -1,4 +1,6 @@
-body {
+body,
+span,
+p {
   --font-family: 'Noto Sans';
   --font-size: 16px;
   --font-weight: 400;
