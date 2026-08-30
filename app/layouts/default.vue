@@ -1,10 +1,10 @@
 <template>
   <div class="relative h-dvh w-dvw overflow-hidden">
     <div
-      v-for="(polaroid, index) in polaroids"
+      v-for="(polaroid, index) in activePolaroids"
       :key="polaroid.src"
-      class="group absolute cursor-grab select-none active:cursor-grabbing"
-      :style="polaroidStyle(index)"
+      class="group absolute hidden cursor-grab select-none active:cursor-grabbing lg:block"
+      :style="polaroidStyles[index]"
       @mousedown="startDrag($event, index)"
       @touchstart.prevent="startDragTouch($event, index)"
     >
@@ -17,9 +17,11 @@
       />
     </div>
 
-    <div class="flex h-dvh items-center justify-center">
+    <div
+      class="flex h-dvh items-start justify-start p-8 lg:items-center lg:justify-center"
+    >
       <div class="container max-h-dvh max-w-135">
-        <div class="text-center">
+        <div class="text-left lg:text-center">
           <slot />
         </div>
       </div>
@@ -38,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-const polaroids = [
+const ALL_POLAROIDS = [
   { src: 'snowman.jpg' },
   { src: 'amsterdam.jpg' },
   { src: 'bells.jpg' },
@@ -71,15 +73,43 @@ const polaroids = [
   { src: 'why2025-village.jpg' },
 ]
 
-const CARD_W = 256 + 32 // p-4 = 16px each side
-const CARD_H = 261 + 32 + 56 // pb-14 = 56px, p-4 top
+const CARD_W = 256
+const CARD_H = 300
 const EDGE_INSET = 80
+const POLAROID_SLOT = 180
 
-const positions = ref<Array<{ x: number; y: number } | null>>(
-  polaroids.map(() => null)
+function calcTotalLen(W: number, H: number): number {
+  const lenTop = W - EDGE_INSET - EDGE_INSET
+  const lenRight = H - EDGE_INSET - EDGE_INSET
+  return 2 * (lenTop + lenRight)
+}
+
+function calcCount(totalLen: number): number {
+  return Math.floor(totalLen / POLAROID_SLOT)
+}
+
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr]
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+const shuffledCatalogue = shuffle(ALL_POLAROIDS)
+
+const totalLen = ref(0)
+
+const activePolaroids = ref<typeof ALL_POLAROIDS>(
+  shuffledCatalogue.slice(0, calcCount(calcTotalLen(0, 0)))
 )
 
-const zOrder = ref<number[]>(polaroids.map((_, i) => i))
+const positions = ref<Array<{ x: number; y: number } | null>>(
+  activePolaroids.value.map(() => null)
+)
+
+const zOrder = ref<number[]>(activePolaroids.value.map((_, i) => i))
 
 function bringToFront(index: number) {
   zOrder.value = [...zOrder.value.filter((i) => i !== index), index]
@@ -94,11 +124,10 @@ function perimeterPositions(n: number): Array<{ x: number; y: number }> {
   const bottom = H - EDGE_INSET
   const left = EDGE_INSET
 
-  // Lengths of each centre-path edge
-  const lenTop = right - left // left → right along top
-  const lenRight = bottom - top // top → bottom along right
-  const lenBottom = right - left // right → left along bottom
-  const lenLeft = bottom - top // bottom → top along left
+  const lenTop = right - left // left to right along top
+  const lenRight = bottom - top // top to bottom along right
+  const lenBottom = right - left // right to left along bottom
+  const lenLeft = bottom - top // bottom to top along left
   const totalLen = lenTop + lenRight + lenBottom + lenLeft
 
   const spacing = totalLen / n
@@ -112,50 +141,50 @@ function perimeterPositions(n: number): Array<{ x: number; y: number }> {
     let cy: number
 
     if (d < lenTop) {
-      // Top edge: left → right
+      // top edge: left to right
       cx = left + d
       cy = top
     } else if (d < lenTop + lenRight) {
-      // Right edge: top → bottom
+      // right edge: top to bottom
       cx = right
       cy = top + (d - lenTop)
     } else if (d < lenTop + lenRight + lenBottom) {
-      // Bottom edge: right → left
+      // bottom edge: right to left
       cx = right - (d - lenTop - lenRight)
       cy = bottom
     } else {
-      // Left edge: bottom → top
+      // left edge: bottom to top
       cx = left
       cy = bottom - (d - lenTop - lenRight - lenBottom)
     }
 
-    // Convert centre → top-left corner
+    // convert centre to top-left corner
     results.push({ x: cx - CARD_W / 2, y: cy - CARD_H / 2 })
   }
 
   return results
 }
 
-function deterministicRotation(index: number): number {
-  const seed = (index * 2654435761) >>> 0
-  return (seed % 300) / 10 - 15
-}
+const rotations = computed(() =>
+  ALL_POLAROIDS.map((_, i) => {
+    const seed = (i * 2654435761) >>> 0
+    return (seed % 300) / 10 - 15
+  })
+)
 
-function polaroidStyle(index: number): Record<string, string> {
-  const pos = positions.value[index]
-  if (!pos) return { visibility: 'hidden' }
-
-  const rotate = deterministicRotation(index)
-  return {
-    transform: `translate(${pos.x}px, ${pos.y}px) rotate(${rotate}deg)`,
-    zIndex: String(zOrder.value.indexOf(index) + 1),
-  }
-}
+const polaroidStyles = computed(() =>
+  activePolaroids.value.map((_, index) => {
+    const pos = positions.value[index]
+    if (!pos) return { visibility: 'hidden' }
+    return {
+      transform: `translate(${pos.x}px, ${pos.y}px) rotate(${rotations.value[index]}deg)`,
+      zIndex: String(zOrder.value.indexOf(index) + 1),
+    }
+  })
+)
 
 onMounted(() => {
-  const pts = perimeterPositions(polaroids.length)
-  positions.value = pts
-
+  applyViewport()
   window.addEventListener('resize', onResize)
 })
 
@@ -165,9 +194,21 @@ onUnmounted(() => {
   window.removeEventListener('mouseup', onMouseUp)
 })
 
+function applyViewport() {
+  totalLen.value = calcTotalLen(window.innerWidth, window.innerHeight)
+  const count = calcCount(totalLen.value)
+
+  if (count !== activePolaroids.value.length) {
+    activePolaroids.value = shuffledCatalogue.slice(0, count)
+    positions.value = activePolaroids.value.map(() => null)
+    zOrder.value = activePolaroids.value.map((_, i) => i)
+  }
+
+  positions.value = perimeterPositions(activePolaroids.value.length)
+}
+
 function onResize() {
-  const pts = perimeterPositions(polaroids.length)
-  positions.value = pts
+  applyViewport()
 }
 
 interface DragState {
