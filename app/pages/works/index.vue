@@ -63,6 +63,13 @@
               </div>
             </div>
           </div>
+
+          <!-- page link -->
+          <NuxtLink
+            :to="`/works/${project.id}`"
+            @mousedown.prevent
+            class="absolute top-0 left-0 z-60 h-full w-full rounded-2xl border-3 border-transparent focus:border-white"
+          />
         </div>
       </div>
     </div>
@@ -70,36 +77,5 @@
 </template>
 
 <script setup lang="ts">
-const projects = [
-  {
-    name: 'Blueprint',
-    summary: 'Nonprofit organization',
-    logo: '/img/works/logo/blueprint.svg',
-    cover: '/img/works/banner/vertical/blueprint.jpg',
-  },
-  {
-    name: 'Nebula',
-    summary: 'Pterodactyl theme',
-    logo: '/img/works/logo/nebula.svg',
-    cover: '/img/works/banner/vertical/nebula.jpg',
-  },
-  {
-    name: 'Writea',
-    summary: 'Blogging site',
-    logo: '/img/works/logo/writea.svg',
-    cover: '/img/works/banner/vertical/writea.jpg',
-  },
-  {
-    name: 'Bashatime',
-    summary: 'Wakatime plugin',
-    logo: '/img/works/logo/bashatime.svg',
-    cover: '/img/works/banner/vertical/bashatime.jpg',
-  },
-  {
-    name: 'Circles',
-    summary: 'Brand kit',
-    logo: '/img/works/logo/circles.svg',
-    cover: '/img/works/banner/vertical/circles.jpg',
-  },
-]
+import { projects } from '~/assets/projects'
 </script>
