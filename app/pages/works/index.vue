@@ -1,11 +1,13 @@
 <template>
-  <div class="h-full w-full max-lg:bg-mist-900 max-lg:p-4">
-    <div class="group/list flex h-full w-full items-stretch max-lg:flex-col">
+  <div class="h-full w-full max-lg:overflow-scroll">
+    <div
+      class="group/list h-full w-full items-stretch max-lg:space-y-4 lg:flex"
+    >
       <div
         v-for="project in projects"
         :key="project.name"
         :class="[
-          'group/container min-w-0 flex-1 transition-[flex] duration-300 ease-in-out last:pr-0 lg:pr-4',
+          'group/container min-w-0 flex-1 transition-[flex] duration-300 ease-in-out last:pr-0 max-lg:h-50 max-lg:w-full lg:pr-4',
           'md:group-has-[&:hover]/list:flex-[0.65] md:group-has-[&:hover]/list:hover:flex-[1.35]',
           'lg:group-has-[&:hover]/list:flex-[0.8] lg:group-has-[&:hover]/list:hover:flex-[1.2]',
           'xl:group-has-[&:hover]/list:flex-[0.9] xl:group-has-[&:hover]/list:hover:flex-[1.1]',
@@ -26,7 +28,7 @@
           />
 
           <!-- project logo -->
-          <div class="absolute top-0 left-0 z-30 h-full w-full">
+          <div class="absolute top-0 left-0 z-30 h-full w-full max-lg:hidden">
             <div class="flex h-full flex-row items-center justify-center">
               <NuxtImg :src="project.logo" class="w-5/6 max-w-75 xl:w-2/3" />
             </div>
