@@ -10,7 +10,7 @@
     </span>
     <ul class="flex gap-6">
       <li><NuxtLink to="/" class="">Home</NuxtLink></li>
-      <li><NuxtLink to="/" class="">Blog</NuxtLink></li>
+      <li><NuxtLink to="/works" class="">Works</NuxtLink></li>
     </ul>
   </nav>
 </template>

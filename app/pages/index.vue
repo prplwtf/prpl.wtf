@@ -38,6 +38,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'polaroids',
+})
+
 const buttons = [
   {
     src: 'https://prpl.wtf/img/88x31/prpl_wtf.gif',
