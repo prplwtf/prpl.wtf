@@ -230,12 +230,28 @@ const animate = () => {
   animationFrameId = requestAnimationFrame(animate)
 }
 
-onMounted(() => {
-  // Calculate the width of the content for seamless looping
+let resizeObserver: ResizeObserver | null = null
+
+const measureContentWidth = () => {
   if (marqueeTrack.value) {
     const firstChild = marqueeTrack.value.firstElementChild as HTMLElement
     if (firstChild) {
       contentWidth = firstChild.offsetWidth
+    }
+  }
+}
+
+onMounted(() => {
+  measureContentWidth()
+
+  // Re-measure whenever the first copy resizes (e.g. as images finish loading)
+  if (marqueeTrack.value) {
+    const firstChild = marqueeTrack.value.firstElementChild as HTMLElement
+    if (firstChild) {
+      resizeObserver = new ResizeObserver(() => {
+        measureContentWidth()
+      })
+      resizeObserver.observe(firstChild)
     }
   }
 
@@ -247,6 +263,7 @@ onUnmounted(() => {
   if (animationFrameId) {
     cancelAnimationFrame(animationFrameId)
   }
+  resizeObserver?.disconnect()
   // Clean up mouse event listeners
   document.removeEventListener('mousemove', handleMouseMove)
   document.removeEventListener('mouseup', handleMouseUp)

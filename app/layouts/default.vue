@@ -1,5 +1,5 @@
 <template>
-  <DotsFollow />
+  <Dots />
 
   <div class="h-full w-full bg-mist-900">
     <div
