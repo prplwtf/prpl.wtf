@@ -26,7 +26,7 @@
 
           <!-- background gradient -->
           <div
-            class="absolute top-1/2 left-0 z-20 h-full w-full bg-linear-to-b from-transparent to-black/40 opacity-50 transition-all duration-300 group-hover/container:top-0 group-hover/container:opacity-100"
+            class="absolute top-1/2 left-0 z-20 h-full w-full bg-linear-to-b from-transparent to-black/40 opacity-50 transition-all duration-300 ease-in-out group-hover/container:top-0 group-hover/container:opacity-100"
           />
 
           <!-- project logo -->
@@ -42,7 +42,7 @@
               name="bi:arrow-up-right-square"
               :size="48"
               mode="svg"
-              class="opacity-100 transition-opacity duration-300 group-hover/container:opacity-0"
+              class="opacity-100 transition-opacity duration-300 ease-in-out group-hover/container:opacity-0"
             />
           </div>
           <div class="absolute top-0 right-0 z-45 p-6">
@@ -50,7 +50,7 @@
               name="bi:arrow-up-right-square-fill"
               :size="48"
               mode="svg"
-              class="opacity-0 transition-opacity duration-300 group-hover/container:opacity-100"
+              class="opacity-0 transition-opacity duration-300 ease-in-out group-hover/container:opacity-100"
             />
           </div>
 
@@ -60,13 +60,13 @@
               class="flex h-full w-full flex-col items-start justify-end overflow-hidden"
             >
               <div
-                class="mb-0 space-y-1 transition-[margin-bottom] duration-300 group-hover/container:mb-2"
+                class="mb-0 space-y-1 transition-[margin-bottom] duration-300 ease-in-out group-hover/container:mb-2"
               >
                 <h2 class="max-w-full truncate italic">{{ project.name }}</h2>
                 <p class="max-w-full truncate">{{ project.summary }}</p>
               </div>
               <div
-                class="max-h-0 opacity-0 transition-[max-height,opacity] duration-300 group-hover/container:max-h-(--link-h) group-hover/container:opacity-75"
+                class="max-h-0 opacity-0 transition-[max-height,opacity] duration-300 ease-in-out group-hover/container:max-h-(--link-h) group-hover/container:opacity-75"
                 :ref="(el) => setLinkRef(el, project.id)"
                 :style="{ '--link-h': linkHeights[project.id] }"
               >

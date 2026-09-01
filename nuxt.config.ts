@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/content',
+    '@nuxtjs/mdc',
   ],
   css: ['~/assets/css/main.css'],
   vite: {
