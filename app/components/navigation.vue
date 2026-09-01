@@ -9,8 +9,9 @@
       />
     </NuxtLink>
     <ul class="flex gap-6">
-      <li><NuxtLink to="/" class="">Home</NuxtLink></li>
-      <li><NuxtLink to="/works" class="">Works</NuxtLink></li>
+      <li><NuxtLink to="/">Home</NuxtLink></li>
+      <li><NuxtLink to="/works">Works</NuxtLink></li>
+      <li><NuxtLink to="/blog">Blog</NuxtLink></li>
     </ul>
   </nav>
 </template>

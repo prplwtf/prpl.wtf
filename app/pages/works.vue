@@ -92,6 +92,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'blank',
+})
+
 const linkRefs = ref<Record<string, HTMLElement>>({})
 const linkHeights = ref<Record<string, string>>({})
 

@@ -76,13 +76,8 @@ let hasDragged = false
 const normalizePosition = () => {
   if (contentWidth === 0) return
 
-  // Keep position within bounds (0 to -contentWidth)
-  // This allows seamless looping in both directions
-  if (translateX.value > 0) {
-    translateX.value = translateX.value - contentWidth
-  } else if (translateX.value <= -contentWidth) {
-    translateX.value = translateX.value + contentWidth
-  }
+  translateX.value =
+    ((translateX.value % contentWidth) - contentWidth) % contentWidth
 }
 
 const handleMouseEnter = () => {
