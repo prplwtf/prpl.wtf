@@ -57,18 +57,31 @@
             <div
               class="flex h-full w-full flex-col items-start justify-end overflow-hidden"
             >
-              <div class="space-y-1">
+              <div
+                class="mb-0 space-y-1 transition-[margin-bottom] duration-300 group-hover/container:mb-2"
+              >
                 <h2 class="max-w-full truncate italic">{{ project.name }}</h2>
                 <p class="max-w-full truncate">{{ project.summary }}</p>
+              </div>
+              <div
+                class="max-h-0 opacity-0 transition-[max-height,opacity] duration-300 group-hover/container:max-h-(--link-h) group-hover/container:opacity-75"
+                :ref="(el) => setLinkRef(el, project.id)"
+                :style="{ '--link-h': linkHeights[project.id] }"
+              >
+                <div class="flex items-center rounded-full">
+                  <span>{{ project.link.text }}</span>
+                  <Icon name="bi:arrow-right-short" :size="24" />
+                </div>
               </div>
             </div>
           </div>
 
           <!-- page link -->
           <NuxtLink
-            :to="`/works/${project.id}`"
-            @mousedown.prevent
+            :to="project.link.url"
+            target="_blank"
             class="absolute top-0 left-0 z-60 h-full w-full rounded-2xl border-3 border-transparent focus:border-white"
+            @mousedown.prevent
           />
         </div>
       </div>
@@ -77,5 +90,78 @@
 </template>
 
 <script setup lang="ts">
-import { projects } from '~/assets/projects'
+const linkRefs = ref<Record<string, HTMLElement>>({})
+const linkHeights = ref<Record<string, string>>({})
+
+function setLinkRef(el: unknown, id: string) {
+  if (el instanceof HTMLElement) {
+    linkRefs.value[id] = el
+  }
+}
+
+onMounted(async () => {
+  await nextTick()
+  for (const [id, el] of Object.entries(linkRefs.value)) {
+    linkHeights.value[id] = `${el.scrollHeight}px`
+  }
+})
+
+const projects = [
+  {
+    id: 'blueprint',
+    name: 'Blueprint',
+    summary: 'Nonprofit organization',
+    logo: '/img/works/logo/blueprint.svg',
+    cover: '/img/works/banner/vertical/blueprint.jpg',
+    link: {
+      text: 'blueprint.zip',
+      url: 'https://blueprint.zip',
+    },
+  },
+  {
+    id: 'nebula',
+    name: 'Nebula',
+    summary: 'Pterodactyl theme',
+    logo: '/img/works/logo/nebula.svg',
+    cover: '/img/works/banner/vertical/nebula.jpg',
+    link: {
+      text: 'nebula.style',
+      url: 'https://nebula.style',
+    },
+  },
+  {
+    id: 'writea',
+    name: 'Writea',
+    summary: 'Blogging site',
+    logo: '/img/works/logo/writea.svg',
+    cover: '/img/works/banner/vertical/writea.jpg',
+    link: {
+      icon: 'simpleicons:github',
+      text: 'GitHub repository',
+      url: 'https://github.com/prplwtf/writea',
+    },
+  },
+  {
+    id: 'bashatime',
+    name: 'Bashatime',
+    summary: 'Wakatime plugin',
+    logo: '/img/works/logo/bashatime.svg',
+    cover: '/img/works/banner/vertical/bashatime.jpg',
+    link: {
+      text: 'GitHub repository',
+      url: 'https://github.com/prplwtf/bashatime.sh',
+    },
+  },
+  {
+    id: 'circles',
+    name: 'Circles',
+    summary: 'Brand kit',
+    logo: '/img/works/logo/circles.svg',
+    cover: '/img/works/banner/vertical/circles.jpg',
+    link: {
+      text: 'GitHub repository',
+      url: 'https://github.com/prplwtf/circles',
+    },
+  },
+]
 </script>
