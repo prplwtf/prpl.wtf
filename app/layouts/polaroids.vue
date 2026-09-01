@@ -1,9 +1,5 @@
 <template>
-  <DotsFollow />
-  <!-- radial center cutoff -->
-  <div
-    class="absolute inset-0 z-0 bg-radial from-mist-900/80 from-20% to-transparent to-70% max-lg:hidden"
-  />
+  <Dots />
 
   <div
     v-for="(polaroid, index) in activePolaroids"
