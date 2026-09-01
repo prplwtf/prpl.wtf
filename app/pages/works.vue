@@ -18,7 +18,9 @@
         >
           <!-- background image cover -->
           <NuxtImg
-            class="absolute top-0 left-0 z-10 h-full w-full object-cover"
+            class="absolute top-0 left-0 z-10 h-full w-full object-cover object-center"
+            sizes="300px lg:600 xl:800px 2xl:1200px"
+            densities="1x 2x"
             :src="project.cover"
           />
 
