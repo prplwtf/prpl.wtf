@@ -1,42 +1,14 @@
 ---
-title: hi internet
-description: my first blog post
+title: new beginnings
+description: a brand new personal website
 tags: one, two
 image: hi.jpg
-date: 2026-09-01
+date: 2026-09-02
 unlisted: false
 ---
 
-hello world
+hi! it's me, emma.
 
-# heading 1
+welcome to my brand new personal blog. it's like my old writea-based blog, but good and a lot less corporate.
 
-## heading 2
-
-### heading 3
-
-#### heading 4
-
-##### heading 5
-
-###### heading 6
-
----
-
-this could use some improvement
-
-```js
-console.log('hello world')
-```
-
-explodes
-
-:sob:
-
-`test`
-
-**bold** _italic_
-
-| table | tabled |
-| ----- | ------ |
-| 1     | 2      |
+i plan to write things down here every now and then. i like writing things, so i might as well give this a try :)

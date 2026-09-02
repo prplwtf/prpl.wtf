@@ -1,17 +1,30 @@
 <template>
-  <div class="mb-10 space-y-2 px-4">
-    <h2>
-      {{ post.title }}
-    </h2>
-    <p class="text-mist-400">
-      {{ post.description }}
-    </p>
+  <div
+    class="relative mb-10 min-h-45 overflow-hidden rounded-t-2xl bg-mist-800"
+  >
+    <NuxtImg
+      :src="`/img/blog/thumbnails/${post.image}`"
+      :height="400"
+      class="absolute inset-0 z-10 h-[calc(100%-1px)] w-full object-cover"
+    />
+    <div
+      class="absolute inset-0 z-20 bg-linear-to-b from-transparent to-mist-900 to-75%"
+    />
+    <div class="absolute bottom-0 left-0 z-30 w-full space-y-2 p-4 text-center">
+      <h2 class="italic">
+        {{ post.title }}
+      </h2>
+      <div class="space-y-1">
+        <p class="text-mist-400">
+          {{ post.description }} •
+          <NuxtTime :datetime="post.date" :relative="true" class="" />
+        </p>
+      </div>
+    </div>
   </div>
 
-  <div class="overflow-hidden rounded-2xl bg-mist-900">
-    <div class="bg-mist-800/60 p-4">
-      <ContentRenderer :value="post" class="prose-content space-y-3" />
-    </div>
+  <div class="p-4 pb-20">
+    <ContentRenderer :value="post" class="prose-content space-y-3" />
   </div>
 </template>
 
