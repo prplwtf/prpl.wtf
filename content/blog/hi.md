@@ -61,3 +61,9 @@ why would you want to start a blog when
 NOOO THERES A LINE TOO
 
 lets hope emma doesnt try to add custom emoji :fear:
+
+_italic text wow_
+
+gambling gambling gambling
+
+explodes violently
