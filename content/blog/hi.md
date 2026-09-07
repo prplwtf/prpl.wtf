@@ -7,7 +7,7 @@ date: 2026-09-02
 unlisted: false
 ---
 
-hi! it's me, emma.
+hi! it's me, :sparkles: emma :sparkles:
 
 welcome to my brand new personal blog. it's like my old writea-based blog, but good and a lot less corporate.
 
