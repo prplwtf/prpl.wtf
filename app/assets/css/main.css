@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 @import './headings.css';
 @import './paragraphs.css';
+@source '~/../content';
 
 html {
   color: var(--color-mist-50);

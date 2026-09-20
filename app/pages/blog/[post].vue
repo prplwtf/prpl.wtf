@@ -1,5 +1,6 @@
 <template>
   <div
+    v-if="post"
     class="relative mb-10 min-h-45 overflow-hidden rounded-t-2xl bg-mist-800"
   >
     <NuxtImg
@@ -23,7 +24,7 @@
     </div>
   </div>
 
-  <div class="p-4 pb-20">
+  <div class="p-4 pb-20" v-if="post">
     <ContentRenderer :value="post" class="prose-content space-y-3" />
   </div>
 </template>

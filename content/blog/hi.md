@@ -15,7 +15,7 @@ i plan to write things down here every now and then. i like writing things, so i
 
 - my blogging wont have any schedule
 - i write about whatever i feel like :)
-- these posts will be free to access :D
+- these posts will be free to access \:D
 - bwaaaaaaaaaaaaaaaaaa
 - explodes
 - nyaaa
@@ -28,7 +28,7 @@ i plan to write things down here every now and then. i like writing things, so i
 
 ## summary
 
-long story short: too much nyaa is bad for business, but little nyaa is fine, :P
+long story short: too much nyaa is bad for business, but little nyaa is fine, \:P
 
 also bwaaaaaaaaaaaaaaaaaaaaa
 
@@ -52,7 +52,7 @@ why would you want to start a blog when
 2. you have to deal with text
 3. you have to deal with writing
 
-`or even code oh no` it also has to be inline :c
+`or even code oh no` it also has to be inline \:c
 
 > QUOTES?? OH NO OH GOD PLEASE STOP
 
