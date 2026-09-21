@@ -1,14 +1,16 @@
 <template>
-  <div class="my-4 overflow-auto rounded-2xl bg-mist-800 p-2">
+  <div class="my-4 overflow-auto rounded-2xl bg-mist-800 p-3">
     <div class="flex justify-between pb-2">
-      <div class="flex items-center gap-1.5 ps-1">
-        <Icon name="bi:code" />
-        <span>{{ props.filename || props.language || 'code' }}</span>
+      <div>
+        <div class="flex items-center gap-1.5">
+          <Icon name="bi:code" />
+          <span>{{ props.filename || props.language || 'code' }}</span>
+        </div>
       </div>
       <button class="rounded-lg bg-mist-700 px-2 py-1">Copy</button>
     </div>
     <pre
-      class="w-full min-w-0 overflow-x-auto"
+      class="code-block w-full min-w-0 overflow-x-auto font-mono text-sm"
       :class="props.class"
     ><slot /></pre>
   </div>
@@ -32,7 +34,11 @@ const props = withDefaults(
 </script>
 
 <style scoped>
-pre code .line {
+.code-block :deep(code span) {
+  font-family: inherit;
+}
+
+.code-block :deep(.line) {
   display: block;
 }
 </style>

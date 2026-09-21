@@ -4,6 +4,15 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+  content: {
+    build: {
+      markdown: {
+        highlight: {
+          theme: 'material-theme-palenight',
+        },
+      },
+    },
+  },
   modules: [
     '@nuxt/icon',
     '@nuxt/image',
