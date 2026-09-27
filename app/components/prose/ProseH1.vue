@@ -1,7 +1,7 @@
 <template>
   <h1
     :id="props.id"
-    class="h2 group relative -ms-2 flex items-center justify-start ps-2 font-bold!"
+    class="h2 group relative -ms-2 mt-8 flex items-center justify-start ps-2 font-bold!"
   >
     <UtilityHeadingshare v-if="props.id" :id="props.id" :level="1" />
     <slot />
