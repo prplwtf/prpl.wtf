@@ -7,7 +7,7 @@
     </p>
   </div>
 
-  <Wave class="my-6 lg:px-4.5" />
+  <Wave class="my-6 text-mist-700 lg:px-4.5" />
 
   <div class="flex flex-col">
     <NuxtLink

@@ -30,7 +30,6 @@
 
 .wave-path {
   stroke: currentColor;
-  opacity: 0.25;
   stroke-dasharray: 2400;
   stroke-dashoffset: 2400;
   animation: wave-draw 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
@@ -39,7 +38,6 @@
 @keyframes wave-draw {
   to {
     stroke-dashoffset: 0;
-    opacity: 0.25;
   }
 }
 </style>
