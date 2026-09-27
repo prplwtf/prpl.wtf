@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@nuxt/fonts',
     '@nuxt/content',
     '@nuxtjs/mdc',
+    '@nuxtjs/plausible',
   ],
   css: ['~/assets/css/main.css'],
   vite: {
@@ -41,5 +42,8 @@ export default defineNuxtConfig({
         weights: [500, 600, 700],
       },
     ],
+  },
+  plausible: {
+    ignoredHostnames: ['localhost'],
   },
 })
