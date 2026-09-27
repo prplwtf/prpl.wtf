@@ -31,7 +31,6 @@
 
 <script setup lang="ts">
 const ALL_POLAROIDS = [
-  { src: 'snowman.jpg' },
   { src: 'amsterdam.jpg' },
   { src: 'bells.jpg' },
   { src: 'blahaj.jpg' },
@@ -53,6 +52,7 @@ const ALL_POLAROIDS = [
   { src: 'seagull.jpg' },
   { src: 'selfie.jpg' },
   { src: 'sharks.jpg' },
+  { src: 'snowman.jpg' },
   { src: 'sky.jpg' },
   { src: 'strandbeest.jpg' },
   { src: 'train.jpg' },
