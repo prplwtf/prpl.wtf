@@ -45,6 +45,8 @@ export default defineNuxtConfig({
   },
   plausible: {
     ignoredHostnames: ['localhost'],
+    domain: 'prpl.wtf',
+    apiHost: 'https://plausible.prpl.wtf',
   },
   nitro: {
     prerender: {
