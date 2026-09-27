@@ -44,52 +44,52 @@ definePageMeta({
 
 const buttons = [
   {
-    src: 'https://prpl.wtf/img/88x31/prpl_wtf.gif',
+    src: '/img/88x31/prpl_wtf.gif',
     alt: 'prpl.wtf',
     href: null,
   },
   {
-    src: 'https://prpl.wtf/img/88x31/vvqb_dev.gif',
+    src: '/img/88x31/vvqb_dev.gif',
     alt: 'vvqb.dev',
     href: 'https://vvqb.dev',
   },
   {
-    src: 'https://prpl.wtf/img/88x31/auri_lol.gif',
+    src: '/img/88x31/auri_lol.gif',
     alt: 'auri.lol',
     href: 'https://auri.lol',
   },
   {
-    src: 'https://prpl.wtf/img/88x31/liv_town.gif',
+    src: '/img/88x31/liv_town.gif',
     alt: 'liv.town',
     href: 'https://liv.town',
   },
   {
-    src: 'https://prpl.wtf/img/88x31/circulars_dev.gif',
+    src: '/img/88x31/circulars_dev.gif',
     alt: 'circulars.dev',
     href: 'https://circulars.dev',
   },
   {
-    src: 'https://prpl.wtf/img/88x31/jos_gg.gif',
+    src: '/img/88x31/jos_gg.gif',
     alt: 'jos.gg',
     href: 'https://jos.gg',
   },
   {
-    src: 'https://prpl.wtf/img/88x31/bad_cash.gif',
+    src: '/img/88x31/bad_cash.gif',
     alt: 'bad.cash',
     href: 'https://bad.cash',
   },
   {
-    src: 'https://prpl.wtf/img/88x31/arcaege_dev.png',
+    src: '/img/88x31/arcaege_dev.png',
     alt: 'arcaege.dev',
     href: 'https://arcaege.dev',
   },
   {
-    src: 'https://prpl.wtf/img/88x31/noob-dev_fyi.gif',
+    src: '/img/88x31/noob-dev_fyi.gif',
     alt: 'noob-dev.fyi',
     href: 'https://noob-dev.fyi',
   },
   {
-    src: 'https://prpl.wtf/img/88x31/senko_dev.gif',
+    src: '/img/88x31/senko_dev.gif',
     alt: 'senko.dev',
     href: 'https://senko.dev',
   },
