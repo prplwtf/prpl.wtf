@@ -55,6 +55,14 @@
 </template>
 
 <script setup lang="ts">
+useSeoMeta({
+  title: "blog - emma's website",
+  description: 'locally sourced, free-range blog posts',
+  ogType: 'website',
+  ogTitle: `blog - emma's website`,
+  ogDescription: 'locally sourced, free-range blog posts',
+})
+
 const { data: posts } = await useAsyncData('blog', () =>
   queryCollection('blog')
     .orWhere((query) =>

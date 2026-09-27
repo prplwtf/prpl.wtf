@@ -96,6 +96,14 @@ definePageMeta({
   layout: 'blank',
 })
 
+useSeoMeta({
+  title: "works - emma's website",
+  description: "stuff i've made",
+  ogType: 'website',
+  ogTitle: `works - emma's website`,
+  ogDescription: "stuff i've made",
+})
+
 const linkRefs = ref<Record<string, HTMLElement>>({})
 const linkHeights = ref<Record<string, string>>({})
 

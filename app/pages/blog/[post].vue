@@ -46,10 +46,10 @@ if (!post.value) {
 }
 
 useSeoMeta({
-  title: post.value?.title,
+  title: post.value?.title + "- emma's website",
   description: post.value?.description,
   ogType: 'article',
-  ogTitle: `${post.value?.title} - Blueprint`,
+  ogTitle: `${post.value?.title} - emma's website`,
   ogDescription: post.value?.description,
 })
 </script>

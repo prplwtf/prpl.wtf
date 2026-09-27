@@ -42,6 +42,14 @@ definePageMeta({
   layout: 'polaroids',
 })
 
+useSeoMeta({
+  title: "emma's website",
+  description: 'this is my personal website',
+  ogType: 'website',
+  ogTitle: `emma's website`,
+  ogDescription: 'this is my personal website',
+})
+
 const buttons = [
   {
     src: '/img/88x31/prpl_wtf.gif',
