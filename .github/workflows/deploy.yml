@@ -18,7 +18,7 @@ jobs:
           cache: true
       # Pick your own package manager and build script
       - run: pnpm install
-      - run: pnpx nuxt build --preset github_pages
+      - run: pnpx generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
