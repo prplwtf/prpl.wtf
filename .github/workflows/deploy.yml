@@ -15,10 +15,11 @@ jobs:
         with:
           version: 11
           runtime: node@22
+          install: false
           cache: true
       # Pick your own package manager and build script
       - run: pnpm install
-      - run: pnpx generate
+      - run: pnpm generate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
