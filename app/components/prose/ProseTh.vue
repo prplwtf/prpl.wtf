@@ -1,6 +1,6 @@
 <template>
   <th
-    class="text-default-font border-r border-mist-700/70 px-6 py-3.5 text-left text-sm font-semibold last:border-r-0"
+    class="text-default-font border-r border-mist-700/90 p-3 text-left text-sm font-semibold last:border-r-0"
     :align="props.align"
   >
     <slot />
