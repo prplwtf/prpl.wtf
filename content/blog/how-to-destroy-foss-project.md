@@ -71,3 +71,4 @@ We post [this announcement](https://www.answeroverflow.com/m/1556451527097581690
 - consider sharing this blog post.
 - [consider donating to blueprint](https://bpfw.io/donate) to support us. all finances are transparent and go to our FOSS projects.
 - support your local pterodactyl alternative.
+- check out [hydrodactyl](https://hydrodactyl.dev), blueprint-funded pterodactyl alternative
